@@ -1,11 +1,13 @@
 package com.tom.lib
 
-class Student (var name: String, var english:Int, var math: Int) {
-    constructor() : this("",0,0) {
+open class Student (var name: String, var english:Int, var math: Int) {
+    constructor() : this("", 0, 0) {
         println("Hi")
     }
-    constructor(name: String) : this(name,0,0){
+
+    constructor(name: String) : this(name, 0, 0) {
     }
+
     //Fields
 //    var name: String? = null
 //    var english = 0
@@ -14,11 +16,17 @@ class Student (var name: String, var english:Int, var math: Int) {
     fun print() {
         println("$name\t$english\t$math\t${average()}")
     }
-    fun average(): Int {
-        return  (english+math)/2
-    }
-}
 
+    fun average() = (english + math) / 2
+    fun highest() = if(english>math) english else math
+    fun grading() = when(average()/10){
+            in 9..10->'A'
+            8->'B'
+            7->'C'
+            6->'D'
+            else->'F'
+        }
+}
 fun main() {
     val hank = Student("Hank")
     val jack = Student("Jack",85,65)
