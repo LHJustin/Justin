@@ -23,7 +23,7 @@ class Guessnum : AppCompatActivity() {
     var g = GuessNumber()
 
     fun start(view: View){
-        var num = binding.edNum.toString().toInt()
+        var num = binding.edNum.text.toString().toInt()
         g.guesse(num)
         val state = g.x
         val Mes = when(state){
@@ -48,7 +48,7 @@ class Guessnum : AppCompatActivity() {
 //        else x="What's wrong with you?"
         if (g.end){
             g.reset()
-            binding.tvTitle.text = getString(R.string.please_enter_a_number) + "${g.min}~${g.max}"
+            binding.tvTitle.text = getString(R.string.please_enter_a_number) + "${g.min}~${g.mx}"
             AlertDialog.Builder(this)
                 .setTitle(getString(R.string.Messange))
                 .setMessage(Mes)
@@ -56,7 +56,7 @@ class Guessnum : AppCompatActivity() {
                 .show()
             count()
         }else{
-        binding.tvTitle.text = getString(R.string.please_enter_a_number) + "${g.min}~${g.max}"
+        binding.tvTitle.text = getString(R.string.please_enter_a_number) + "${g.min}~${g.mx}"
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.Messange))
             .setMessage(Mes)
@@ -77,7 +77,7 @@ class Guessnum : AppCompatActivity() {
                 .setPositiveButton(getString(R.string.ok),null)
                 .show()
             g.reset()
-            binding.tvTitle.text = getString(R.string.please_enter_a_number) + "${g.min}~${g.max}"
+            binding.tvTitle.text = getString(R.string.please_enter_a_number) + "${g.min}~${g.mx}"
             binding.tvChance.text = getString(R.string.chance)+" ${g.counte}"
         }
     }

@@ -47,7 +47,7 @@ class GuessNumber {
             end = true
         }else if (num>secrete && num<max){
             x=GameState.SMALLER
-            max = num
+            mx = num
         }else if (num<secrete && num>min){
             x=GameState.BIGGER
             min = num
