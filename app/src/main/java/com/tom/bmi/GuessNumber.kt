@@ -45,7 +45,7 @@ class GuessNumber {
         if (num==secrete){
             x=GameState.BINGO
             end = true
-        }else if (num>secrete && num<max){
+        }else if (num>secrete && num<mx){
             x=GameState.SMALLER
             mx = num
         }else if (num<secrete && num>min){
