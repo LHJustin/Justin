@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BMI</string>
+    <string name="dialoge_title">猜數字</string>
+    <string name="ok">確定</string>
+    <string name="button_guess">開始猜</string>
+    <string name="bigger">大一點！</string>
+    <string name="smaller">小一點！</string>
+    <string name="bingo">你贏了</string>
+    <string name="congratualation">恭喜</string>
+    <string name="wrong">是在哈囉？</string>
+    <string name="please_enter_a_number">請輸入數字</string>
+    <string name="the_number">你贏了！數字是</string>
+    <string name="chance">機會：</string>
+    <string name="Messange">訊息</string>
+    <string name="lose">嘿！你輸了！請從新開始。</string>
+    <string name="loser">哈哈～！輸家！</string>
+    <string name="please_enter_a_number_1_100">請輸入數字（1~100）</string>
+    <string name="guess">開始猜</string>
+    <string name="guess_number">猜數字</string>
+    <string name="chance_10">機會：１０</string>
+    <string name="restart">重新開始</string>
+    <string name="chance_3">機會：3</string>
+    <string name="please_enter_a_number_1_10">請輸入數字（1~10）</string>
+    <string name="easy">簡單</string>
+    <string name="hard">困難</string>
+</resources>
