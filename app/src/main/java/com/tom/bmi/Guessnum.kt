@@ -4,26 +4,35 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import com.tom.bmi.databinding.ActivityGuessnumBinding
 import kotlin.concurrent.fixedRateTimer
 
 class Guessnum : AppCompatActivity() {
     private lateinit var binding: ActivityGuessnumBinding
+    val viewModel by viewModels<GuessViewModel> ()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGuessnumBinding.inflate(layoutInflater)
 //        setContentView(R.layout.activity_guessnum)
         setContentView(binding.root)
+
+//        viewModel.counter.observe(this){
+//            binding.tvChance.setText(it.toString())
+//        }
     }
 //    var max = 10
 //    var min = 1
 //    var secret = (1..10).random()
 //    var chance = 0
+
     var g = GuessNumber()
 
     fun start(view: View){
         var num = binding.edNum.text.toString().toInt()
+
         g.guesse(num)
         val state = g.x
         val Mes = when(state){
@@ -32,6 +41,7 @@ class Guessnum : AppCompatActivity() {
             GuessNumber.GameState.BIGGER -> getString(R.string.bigger)
             else -> getString(R.string.wrong)
         }
+
 //        var x = ""
 //        if (num == secret) {
 //            x="You win!"
@@ -46,6 +56,7 @@ class Guessnum : AppCompatActivity() {
 //            min = num
 //        }
 //        else x="What's wrong with you?"
+
         if (g.end){
             g.reset()
             binding.tvTitle.text = getString(R.string.please_enter_a_number) + "${g.min}~${g.mx}"
